@@ -42,4 +42,13 @@ public class SchoolListPageHandle {
         return anInt;
     }
 
+    /**
+     * 点击账号设置按钮
+     * @throws Exception
+     */
+    public void clickAccountSetBtn() throws Exception {
+
+        slp.click(slp.getSetImformationBtn());
+    }
+
 }

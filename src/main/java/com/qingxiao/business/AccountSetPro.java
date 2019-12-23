@@ -14,8 +14,9 @@ public class AccountSetPro {
     /**
      * 修改昵称
      */
-    public void rename()  {
+    public void rename() throws Exception {
         accountSetPageHandle.clickEditNicknameBtn();
+        Thread.sleep(2000);
         try {
             accountSetPageHandle.inputNewNicknam("rename");
             String nickname = accountSetPageHandle.getNickname();

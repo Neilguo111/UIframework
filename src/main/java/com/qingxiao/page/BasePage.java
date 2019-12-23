@@ -29,6 +29,14 @@ public class BasePage {
     }
 
     /**
+     * 等待
+     * @param by
+     */
+    public void wait(By by){
+        driver.waitUntilExpect(by);
+    }
+
+    /**
      * 封装点击事件
      * @param element
      */

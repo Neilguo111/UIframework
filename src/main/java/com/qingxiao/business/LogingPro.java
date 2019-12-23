@@ -21,6 +21,7 @@ public class LogingPro {
             lph.inputUserName(username);
             lph.inputPasswd(passwd);
             lph.clickLoginBtn();
+            Thread.sleep(2000);
         }else {
             System.out.println("页面不存在，或者状态不正确！");
             logger.error("页面不存在，或者状态不正确！");

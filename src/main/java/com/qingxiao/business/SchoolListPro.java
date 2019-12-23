@@ -16,6 +16,14 @@ public class SchoolListPro {
     }
 
     /**
+     * 点击跳转账号设置
+     */
+    public void switchAccountSet() throws Exception {
+        schoolListPageHandle.clickAccountSetBtn();
+        Thread.sleep(2000);
+    }
+
+    /**
      *
      */
 }

@@ -3,6 +3,9 @@ package com.qingxiao.base;
 import com.sun.org.apache.regexp.internal.RE;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
@@ -122,5 +125,9 @@ public class DriverBase {
      */
     public void setCookie(Cookie cookie) {
         driver.manage().addCookie(cookie);
+    }
+
+    public void waitUntilExpect(By by){
+        new WebDriverWait(driver,3).until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 }

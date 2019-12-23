@@ -21,7 +21,7 @@ public class AccountSetPageHandle {
     /**
      * 点击修改昵称按钮
      */
-    public void clickEditNicknameBtn(){
+    public void clickEditNicknameBtn() throws Exception {
         accountSetPage.click(accountSetPage.getEditNicknameBtnElement());
     }
 

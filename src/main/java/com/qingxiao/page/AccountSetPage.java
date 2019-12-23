@@ -2,6 +2,7 @@ package com.qingxiao.page;
 
 import com.qingxiao.base.DriverBase;
 import com.qingxiao.utils.GetLocator;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ public class AccountSetPage extends BasePage {
         super(driver);
     }
 
+    static Logger logger = Logger.getLogger(AccountSetPage.class);
     /**
      * 获取返回按钮webelement
      * @return
@@ -20,6 +22,7 @@ public class AccountSetPage extends BasePage {
     public WebElement getReturnBtnElement()  {
         List<WebElement> returnCloseBtn = new ArrayList<WebElement>();
         try {
+            logger.info("开始定位元素：" + GetLocator.getLocator("editNickname").toString());
             returnCloseBtn = driver.findElements(GetLocator.getLocator("returnCloseBtn"));
         } catch (Exception e) {
             e.printStackTrace();
@@ -31,14 +34,14 @@ public class AccountSetPage extends BasePage {
      * 获取修改昵称按钮webelement
      * @return
      */
-    public WebElement getEditNicknameBtnElement(){
-        WebElement element = null;
-        try {
-            element =  driver.findElement(GetLocator.getLocator("editNickname"));
-        } catch (Exception e) {
-            e.printStackTrace();
+    public WebElement getEditNicknameBtnElement() throws Exception {
+        logger.info("开始获取定位信息：" + GetLocator.getLocator("editNickname"));
+        driver.waitUntilExpect(GetLocator.getLocator("editNickname"));
+        List<WebElement> editNickname = driver.findElements(GetLocator.getLocator("editNickname"));
+        if (editNickname.size()!= 0) {
+            return editNickname.get(0);
         }
-        return element;
+        return driver.findElement(GetLocator.getLocator("editNickname"));
     }
 
     /**

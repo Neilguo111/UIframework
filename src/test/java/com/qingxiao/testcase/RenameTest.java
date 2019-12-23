@@ -2,6 +2,7 @@ package com.qingxiao.testcase;
 
 import com.qingxiao.base.DriverBase;
 import com.qingxiao.business.AccountSetPro;
+import com.qingxiao.business.LogingPro;
 import com.qingxiao.business.SchoolListPro;
 import com.qingxiao.testCase.CaseBase;
 import com.qingxiao.utils.HandleCookie;
@@ -16,6 +17,7 @@ public class RenameTest extends CaseBase {
     public AccountSetPro accountSetPro;
     public ProUtil proUtil;
     public HandleCookie handleCookie;
+    public LogingPro logingPro;
 
     @BeforeClass
     public void beforeTest(){
@@ -24,13 +26,25 @@ public class RenameTest extends CaseBase {
         accountSetPro = new AccountSetPro(driverBase);
         proUtil = new ProUtil("cookie.properties");
         handleCookie = new HandleCookie(driverBase);
-        driverBase.loadUrl("https://biz.qingxiao.online/#/erp/usersetting");
-        handleCookie.setCookie();
-        driverBase.loadUrl("https://biz.qingxiao.online/#/erp/usersetting");
+        logingPro = new LogingPro(driverBase);
+        driverBase.loadUrl("https://biz.qingxiao.online");
+//        handleCookie.setCookie();
+//        driverBase.loadUrl("https://biz.qingxiao.online/#/erp/usersetting");
     }
 
+
     @Test
-    public void renameTest(){
+    public void Login() throws Exception {
+        logingPro.login("17602116237","111111");
+    }
+
+    @Test(dependsOnMethods = {"Login"})
+    public void switchSetPage() throws Exception {
+        schoolListPro.switchAccountSet();
+    }
+
+    @Test(dependsOnMethods = {"switchSetPage"})
+    public void renameTest() throws Exception {
         accountSetPro.rename();
     }
 
