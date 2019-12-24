@@ -103,4 +103,16 @@ public class StudentsListPage extends BasePage{
         return element;
     }
 
+    // 获取加入班级状态元素
+    public WebElement getSearchJoinClassStaus(){
+        WebElement element = null;
+        try{
+            logger.info("---开始获取加入班级状态元素---");
+            element = driver.findElement(GetLocator.getLocator("searchJoinClassStaus"));
+            logger.info("---获取成功---");
+        }catch (Exception e){
+            logger.info("获取失败");
+        }
+        return element;
+    }
 }
