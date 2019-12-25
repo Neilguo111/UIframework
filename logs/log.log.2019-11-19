@@ -1,0 +1,15 @@
+2019-11-19 08:13:16  [ main:0 ] - [ INFO ]  开启执行登录自动化case
+2019-11-19 08:13:16  [ main:5 ] - [ INFO ]  开始执行登录操作！
+2019-11-19 08:24:20  [ main:0 ] - [ INFO ]  开启执行登录自动化case
+2019-11-19 08:24:20  [ main:6 ] - [ INFO ]  开始执行登录操作！
+2019-11-19 08:24:20  [ main:522 ] - [ INFO ]  获取当前driver中的cookies
+2019-11-19 08:24:20  [ main:523 ] - [ INFO ]  acw_tc:76b20f4415741230540686310e3c71bf51ec26a360a8be2ddf434901061c5e 正在写入配置文件
+2019-11-19 08:40:19 com.qingxiao.testcase.Login [ main:0 ] - [ INFO ]  开启执行登录自动化case
+2019-11-19 08:40:19 com.qingxiao.business.LogingPro [ main:4 ] - [ INFO ]  开始执行登录操作！
+2019-11-19 08:40:19 com.qingxiao.utils.HandleCookie [ main:596 ] - [ INFO ]  获取当前driver中的cookies
+2019-11-19 08:40:19 com.qingxiao.utils.HandleCookie [ main:598 ] - [ INFO ]  acw_tc:76b20f7015741240120016303e4301453188a49b0ed468d0a7ecbbbd6febda 正在写入配置文件
+2019-11-19 08:46:38 com.qingxiao.utils.HandleCookie [ main:0 ] - [ INFO ]  正在从配置文件读取cookie信息。。。
+2019-11-19 09:03:36 com.qingxiao.utils.HandleCookie [ main:0 ] - [ INFO ]  正在从配置文件读取cookie信息。。。
+2019-11-19 09:03:36 com.qingxiao.utils.HandleCookie [ main:16 ] - [ INFO ]  正在对当前driver写入cookie信息
+2019-11-19 09:06:48 com.qingxiao.utils.HandleCookie [ main:0 ] - [ INFO ]  正在从配置文件读取cookie信息。。。
+2019-11-19 09:06:48 com.qingxiao.utils.HandleCookie [ main:19 ] - [ INFO ]  正在对当前driver写入cookie信息
