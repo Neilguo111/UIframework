@@ -14,12 +14,12 @@ public class LoginPage extends BasePage {
     }
 
     /**
-     * huoqu
+     * 获取轻校账号登录元素
      * @return
      * @throws Exception
      */
     public WebElement getUserElement() throws Exception {
-        return findElement(GetLocator.getLocator("username"));
+        return findElements(GetLocator.getLocator("username")).get(0);
     }
 
     /**
@@ -28,7 +28,7 @@ public class LoginPage extends BasePage {
      * @throws Exception
      */
     public WebElement getPasswd() throws Exception {
-        return findElement(GetLocator.getLocator("passwd"));
+        return findElements(GetLocator.getLocator("passwd")).get(0);
     }
 
     /**
@@ -37,7 +37,7 @@ public class LoginPage extends BasePage {
      * @throws Exception
      */
     public WebElement getLoginBtn() throws Exception {
-        return findElement(GetLocator.getLocator("loginbtn"));
+        return findElements(GetLocator.getLocator("loginbtn")).get(0);
     }
 
     /**
