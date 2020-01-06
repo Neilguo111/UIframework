@@ -115,4 +115,50 @@ public class StudentsListPage extends BasePage{
         }
         return element;
     }
+
+    // 获取搜索按钮
+    public WebElement getSearchBtn(){
+        WebElement element = null;
+        try {
+            element =  driver.findElement(GetLocator.getLocator("searchBtn"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return element;
+    }
+
+    // 获取重置搜索条件按钮
+    public WebElement getSearchResetBtn(){
+        WebElement element = null;
+        try {
+            element =  driver.findElement(GetLocator.getLocator("searchResetBtn"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return element;
+    }
+
+    // 获取历史学员列表按钮
+    public WebElement getHistoryStudentListBtn(){
+        WebElement element = null;
+        try {
+            element =  driver.findElement(GetLocator.getLocator("historyStudentListBtn"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return element;
+    }
+
+    // 获取在读学员列表按钮
+    public WebElement getOnClassStudentListBtn(){
+        WebElement element = null;
+        try {
+            element =  driver.findElement(GetLocator.getLocator("onClassStudentListBtn"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return element;
+    }
+
+
 }

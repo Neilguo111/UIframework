@@ -3,6 +3,7 @@ package com.qingxiao.business;
 import com.qingxiao.base.DriverBase;
 import com.qingxiao.handle.AccountSetPageHandle;
 
+// 账号设置页面
 public class AccountSetPro {
     public DriverBase driverBase;
     public AccountSetPageHandle accountSetPageHandle;
