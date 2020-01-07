@@ -27,4 +27,5 @@ public class LogingPro {
             logger.error("页面不存在，或者状态不正确！");
         }
     }
+
 }

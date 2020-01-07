@@ -15,7 +15,7 @@ public class AccountSetPageHandle {
      * 返回学校列表页面
      */
     public void clickReturnBtn(){
-        accountSetPage.click(accountSetPage.getReturnBtnElement());
+        accountSetPage.click(accountSetPage.getReturnBtn());
     }
 
     /**
@@ -40,7 +40,7 @@ public class AccountSetPageHandle {
      * @throws Exception
      */
     public void inputNewNicknam(String nickname) throws Exception {
-        accountSetPage.input(accountSetPage.getNicknameInputElement(),nickname);
+        accountSetPage.clearInput(accountSetPage.getNicknameInputElement(),nickname);
     }
 
     /**

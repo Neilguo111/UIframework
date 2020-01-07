@@ -44,7 +44,7 @@ public class BasePage {
         if (element != null){
             element.click();
         }else {
-            System.out.println("元素没有定位到，点击失败！");
+            logger.error("元素没有定位到，点击失败！");
         }
     }
 
@@ -57,7 +57,16 @@ public class BasePage {
         if (element != null){
             element.sendKeys(value);
         }else {
-            System.out.println("元素没有定位到，输入失败！");
+            logger.error("元素没有定位到，输入失败！");
+        }
+    }
+
+    public void clearInput(WebElement element,String value){
+        if (element != null){
+            element.clear();
+            element.sendKeys(value);
+        }else {
+            logger.error("元素没有定位到，输入失败！");
         }
     }
 
@@ -82,6 +91,9 @@ public class BasePage {
      */
     public String getText(WebElement element){
         return element.getText();
+    }
+
+    public void executeJs(String jsCode){
     }
 
 }

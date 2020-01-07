@@ -51,4 +51,15 @@ public class SchoolListPageHandle {
         slp.click(slp.getSetImformationBtn());
     }
 
+    public void clickLogoutBtn(){
+        /**
+         * 点击登出按钮
+         */
+        try {
+            slp.click(slp.getLogoutBtn());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

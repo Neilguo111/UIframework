@@ -130,4 +130,10 @@ public class DriverBase {
     public void waitUntilExpect(By by){
         new WebDriverWait(driver,3).until(ExpectedConditions.visibilityOfElementLocated(by));
     }
+
+    public Object executerJs(String js,Object...args){
+        JavascriptExecutor driver = (JavascriptExecutor) this.driver;
+        Object o = driver.executeScript(js, args);
+        return o;
+    }
 }

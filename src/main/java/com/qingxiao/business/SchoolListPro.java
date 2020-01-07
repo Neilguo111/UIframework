@@ -24,6 +24,9 @@ public class SchoolListPro {
     }
 
     /**
-     *
+     *点击创建机构
      */
+    public void schoolListLoginOut(){
+        schoolListPageHandle.clickLogoutBtn();
+    }
 }

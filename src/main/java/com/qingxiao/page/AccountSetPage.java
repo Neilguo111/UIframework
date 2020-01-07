@@ -19,15 +19,15 @@ public class AccountSetPage extends BasePage {
      * 获取返回按钮webelement
      * @return
      */
-    public WebElement getReturnBtnElement()  {
-        List<WebElement> returnCloseBtn = new ArrayList<WebElement>();
+    public WebElement getReturnBtn()  {
+        WebElement element = null;
         try {
             logger.info("开始定位元素：" + GetLocator.getLocator("editNickname").toString());
-            returnCloseBtn = driver.findElements(GetLocator.getLocator("returnCloseBtn"));
+            element = driver.findElement(GetLocator.getLocator("returnBtn"));
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return returnCloseBtn.get(0);
+        return element;
     }
 
     /**
@@ -37,11 +37,8 @@ public class AccountSetPage extends BasePage {
     public WebElement getEditNicknameBtnElement() throws Exception {
         logger.info("开始获取定位信息：" + GetLocator.getLocator("editNickname"));
         driver.waitUntilExpect(GetLocator.getLocator("editNickname"));
-        List<WebElement> editNickname = driver.findElements(GetLocator.getLocator("editNickname"));
-        if (editNickname.size()!= 0) {
-            return editNickname.get(0);
-        }
-        return driver.findElement(GetLocator.getLocator("editNickname"));
+        WebElement editNickname = driver.findElements(GetLocator.getLocator("editNickname")).get(0);
+        return editNickname;
     }
 
     /**
@@ -50,14 +47,22 @@ public class AccountSetPage extends BasePage {
      * @throws Exception
      */
     public WebElement getNicknameInputElement() throws Exception {
-        return driver.findElement(GetLocator.getLocator("inputNickname"));
+        return driver.findElement(GetLocator.getLocator("nicknameInput"));
     }
 
     /**
      * 获取保存昵称按钮WebElement
-     *
      */
     public WebElement getCommitNicknameBtnElement() throws Exception {
+        List<WebElement> commitSaveBtn = driver.findElements(GetLocator.getLocator("commitSaveBtn"));
+        return commitSaveBtn.get(0);
+    }
+
+    /**
+     * 获取修改密码保存按钮
+     * 第一个元素是提交密码？
+     */
+    public WebElement getCommitPasswdBtnElement() throws Exception {
         List<WebElement> commitSaveBtn = driver.findElements(GetLocator.getLocator("commitSaveBtn"));
         return commitSaveBtn.get(0);
     }
@@ -71,6 +76,4 @@ public class AccountSetPage extends BasePage {
         return driver.findElement(GetLocator.getLocator("editPasswd"));
     }
 
-    public static void main(String[] args) {
-    }
 }

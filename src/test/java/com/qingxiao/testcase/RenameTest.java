@@ -25,7 +25,7 @@ public class RenameTest extends CaseBase {
         schoolListPro = new SchoolListPro(driverBase);
         accountSetPro = new AccountSetPro(driverBase);
         proUtil = new ProUtil("cookie.properties");
-        handleCookie = new HandleCookie(driverBase);
+//        handleCookie = new HandleCookie(driverBase);
         logingPro = new LogingPro(driverBase);
         driverBase.loadUrl("https://biz.qingxiao.online");
 //        handleCookie.setCookie();
@@ -36,6 +36,7 @@ public class RenameTest extends CaseBase {
     @Test
     public void Login() throws Exception {
         logingPro.login("17602116237","111111");
+        Thread.sleep(2000);
     }
 
     @Test(dependsOnMethods = {"Login"})
