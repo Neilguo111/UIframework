@@ -5,7 +5,9 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class BasePage {
     public DriverBase driver;
@@ -20,12 +22,24 @@ public class BasePage {
      * @return
      */
     public WebElement findElement(By by){
-        WebElement element = driver.findElement(by);
+        WebElement element = null;
+        try {
+            element = driver.findElement(by);
+            logger.info("开始获取元素" + by.toString());
+        }catch (NoSuchElementException e){
+            logger.error("找不到元素" + e.getMessage());
+        }
         return element;
     }
 
+    /**
+     * 查找元素列表
+     * @param by
+     * @return
+     */
     public List<WebElement> findElements(By by){
-        return driver.findElements(by);
+        List<WebElement> elements = driver.findElements(by);
+        return elements;
     }
 
     /**
@@ -34,6 +48,13 @@ public class BasePage {
      */
     public void wait(By by){
         driver.waitUntilExpect(by);
+    }
+
+    /**
+     * 刷新页面
+     */
+    public void refresh(){
+        driver.refresh();
     }
 
     /**
@@ -61,6 +82,11 @@ public class BasePage {
         }
     }
 
+    /**
+     * 删除现有内容后输入
+     * @param element
+     * @param value
+     */
     public void clearInput(WebElement element,String value){
         if (element != null){
             element.clear();
@@ -70,11 +96,23 @@ public class BasePage {
         }
     }
 
+    public String getElementText(WebElement element){
+        return element.getText();
+    }
+
     /**
      * 返回页面
      */
     public void back(){
         driver.back();
+    }
+
+    /**
+     * 获取当前页面title
+     * @return String
+     */
+    public String windowTitle(){
+        return driver.currentWindowTitle();
     }
 
     /**

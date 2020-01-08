@@ -24,9 +24,16 @@ public class SchoolListPro {
     }
 
     /**
-     *点击创建机构
+     *点击登出
      */
     public void schoolListLoginOut(){
         schoolListPageHandle.clickLogoutBtn();
+    }
+
+    /**
+     * 遍历校区
+     */
+    public void clickAllSchool(){
+        schoolListPageHandle.iterSchool();
     }
 }

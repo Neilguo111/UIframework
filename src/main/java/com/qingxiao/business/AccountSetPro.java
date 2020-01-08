@@ -21,16 +21,19 @@ public class AccountSetPro {
         Thread.sleep(2000);
         try {
             accountSetPageHandle.inputNewNicknam("rename");
-            String nickname = accountSetPageHandle.getNickname();
             System.out.println("输入完成，坐等2s，再提交");
             Thread.sleep(2000);
             accountSetPageHandle.clickCommitNicknameBtn();
+            Thread.sleep(2000);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-//    public boolean assertRenameSuccess(){
-//        if ()
-//    }
+    public void backStudentList() throws InterruptedException {
+        Thread.sleep(2000);
+        accountSetPageHandle.clickReturnBtn();
+    }
+
+
 }

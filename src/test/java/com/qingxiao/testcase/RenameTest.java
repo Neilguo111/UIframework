@@ -7,9 +7,12 @@ import com.qingxiao.business.SchoolListPro;
 import com.qingxiao.testCase.CaseBase;
 import com.qingxiao.utils.HandleCookie;
 import com.qingxiao.utils.ProUtil;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import static com.qingxiao.utils.Utils.getText;
 
 public class RenameTest extends CaseBase {
     public DriverBase driverBase;
@@ -47,6 +50,12 @@ public class RenameTest extends CaseBase {
     @Test(dependsOnMethods = {"switchSetPage"})
     public void renameTest() throws Exception {
         accountSetPro.rename();
+        Assert.assertEquals(getText(accountSetPro.accountSetPageHandle.getNicknameText()),"rename");
+    }
+
+    @Test(dependsOnMethods = {"Login"})
+    public void iterSchool(){
+        schoolListPro.clickAllSchool();
     }
 
     @AfterClass

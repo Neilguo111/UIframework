@@ -34,11 +34,26 @@ public class SchoolListPage extends BasePage {
      */
     public List<String> getSchoolsName() throws Exception {
         List<String> listName = new ArrayList<String>();
-        List<WebElement> schoolsName = driver.findElements(GetLocator.getLocator("schoolsName"));
+        List<WebElement> schoolsName = driver.findElements(GetLocator.getLocator("schoolListName"));
         for (WebElement we:schoolsName){
             listName.add(we.getText());
         }
         return listName;
+    }
+
+    /**
+     * 处理一组校区元素
+     * @param index
+     * @return WebElement
+     */
+    public WebElement getSchoolWebelement(int index){
+        WebElement element = null;
+        try {
+            element =  driver.findElements(GetLocator.getLocator("schoolListName")).get(index);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return element;
     }
 
     /**
@@ -47,7 +62,7 @@ public class SchoolListPage extends BasePage {
      * @throws Exception
      */
     public List<WebElement> getSchoolsWebelement() throws Exception {
-        return driver.findElements(GetLocator.getLocator("schoolsName"));
+        return driver.findElements(GetLocator.getLocator("schoolListName"));
     }
 
     /**
@@ -71,6 +86,41 @@ public class SchoolListPage extends BasePage {
         return driver.findElement(GetLocator.getLocator("schoolNum"));
     }
 
-//    @FindBy(how = How.ID,id = "asdas")
-//    WebElement message;
+    public WebElement getExpireSchool(){
+        /**
+         * 获取学校到期提示弹窗
+         */
+        WebElement element = null;
+        try {
+            element =  driver.findElement(GetLocator.getLocator("expiredSchoolRemindWindow"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return element;
+    }
+
+    public Boolean isSchoolExpired(){
+        /**
+         * 判断元素是否存在
+         */
+        try{
+            driver.findElement(GetLocator.getLocator("expiredSchoolRemindWindow"));
+        }catch (Exception e){
+            return false;
+        }
+        return true;
+    }
+
+    public WebElement getConfirmBtn(){
+        /**
+         * 获取接受按钮
+         */
+        WebElement element = null;
+        try {
+            element =  driver.findElement(GetLocator.getLocator("expireConfirmBtn"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return element;
+    }
 }

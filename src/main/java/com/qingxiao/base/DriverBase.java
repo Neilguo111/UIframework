@@ -1,7 +1,10 @@
 package com.qingxiao.base;
 
 import com.sun.org.apache.regexp.internal.RE;
+import com.sun.org.apache.xpath.internal.operations.Bool;
+import jdk.nashorn.internal.runtime.logging.DebugLogger;
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,7 +20,7 @@ import java.util.Set;
  */
 public class DriverBase {
     public WebDriver driver;
-
+    static Logger logger = Logger.getLogger(DriverBase.class);
     public DriverBase(String browser) {
         SelectDriver sd = new SelectDriver();
         this.driver = sd.driverName(browser);
@@ -132,8 +135,61 @@ public class DriverBase {
     }
 
     public Object executerJs(String js,Object...args){
+        /**
+         * 执行js脚本
+         */
         JavascriptExecutor driver = (JavascriptExecutor) this.driver;
         Object o = driver.executeScript(js, args);
         return o;
+    }
+
+    public String currentWindowHandle(){
+        /*
+        获取当前窗口句柄
+         */
+        String windowHandle = driver.getWindowHandle();
+        return windowHandle;
+    }
+
+    public String currentWindowTitle(){
+        /**
+         * 获取当前页面title
+         */
+        return driver.getTitle();
+    }
+
+    /**
+     * 刷新页面
+     */
+    public void refresh(){
+        driver.navigate().refresh();
+    }
+
+    /**
+     * 等待指定元素文本出现
+     * @param by
+     * @param text
+     * @return
+     */
+    public Boolean isDisplay(final By by, final String text){
+        logger.info("等待指定元素文本显示");
+        boolean result = false;
+        int attempts = 0;
+        while (attempts < 5) {
+            try {
+                attempts++;
+                logger.info("开始扫描第" + attempts + "次");
+                result = new WebDriverWait(driver, 30).until(new ExpectedCondition<Boolean>() {
+                    public Boolean apply(WebDriver driver) {
+                        return driver.findElement(by).getText().contains(text);
+                    }
+                });
+                logger.info("扫描开始元素结束");
+                return true;
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return result;
     }
 }

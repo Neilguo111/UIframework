@@ -30,8 +30,8 @@ public class AccountSetPageHandle {
      * @return
      * @throws Exception
      */
-    public String getNickname() throws Exception {
-        return accountSetPage.getText(accountSetPage.getNicknameInputElement());
+    public String getNicknameText() throws Exception {
+        return accountSetPage.getText(accountSetPage.getNicknameElement());
     }
 
     /**

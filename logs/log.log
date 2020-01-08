@@ -1,18 +1,9 @@
-2020-01-06 10:35:05 com.qingxiao.testcase.Login [ main:0 ] - [ INFO ]  开启执行登录自动化case
-2020-01-06 10:35:05 com.qingxiao.business.LogingPro [ main:25 ] - [ INFO ]  开始执行登录操作！
-2020-01-06 10:45:09 com.qingxiao.testcase.Login [ main:0 ] - [ INFO ]  开启执行登录自动化case
-2020-01-06 10:45:09 com.qingxiao.business.LogingPro [ main:2 ] - [ INFO ]  开始执行登录操作！
-2020-01-06 10:50:03 com.qingxiao.testcase.Login [ main:0 ] - [ INFO ]  开启执行登录自动化case
-2020-01-06 10:50:03 com.qingxiao.business.LogingPro [ main:3 ] - [ INFO ]  开始执行登录操作！
-2020-01-06 19:55:30 com.qingxiao.business.LogingPro [ main:0 ] - [ INFO ]  开始执行登录操作！
-2020-01-06 19:55:37 com.qingxiao.page.AccountSetPage [ main:6673 ] - [ INFO ]  开始获取定位信息：By.xpath: //*[@class='src-pages-usersetting-index_infooperate' and text()='ÐÞ¸ÄêÇ³Æ']
-2020-01-06 20:02:48 com.qingxiao.business.LogingPro [ main:0 ] - [ INFO ]  开始执行登录操作！
-2020-01-06 20:02:56 com.qingxiao.page.AccountSetPage [ main:8558 ] - [ INFO ]  开始获取定位信息：By.xpath: //*[@class='src-pages-usersetting-index_infooperate' and text()='ÐÞ¸ÄêÇ³Æ']
-2020-01-06 20:05:15 com.qingxiao.business.LogingPro [ main:0 ] - [ INFO ]  开始执行登录操作！
-2020-01-06 20:05:24 com.qingxiao.page.AccountSetPage [ main:8555 ] - [ INFO ]  开始获取定位信息：By.xpath: //*[@class='src-pages-usersetting-index_infooperate']
-2020-01-06 20:09:18 com.qingxiao.business.LogingPro [ main:0 ] - [ INFO ]  开始执行登录操作！
-2020-01-06 20:09:26 com.qingxiao.page.AccountSetPage [ main:8522 ] - [ INFO ]  开始获取定位信息：By.xpath: //*[@class='src-pages-usersetting-index_infooperate']
-2020-01-06 20:11:15 com.qingxiao.business.LogingPro [ main:0 ] - [ INFO ]  开始执行登录操作！
-2020-01-06 20:11:23 com.qingxiao.page.AccountSetPage [ main:8541 ] - [ INFO ]  开始获取定位信息：By.xpath: //*[@class='src-pages-usersetting-index_infooperate']
-2020-01-06 20:20:00 com.qingxiao.business.LogingPro [ main:0 ] - [ INFO ]  开始执行登录操作！
-2020-01-06 20:20:09 com.qingxiao.page.AccountSetPage [ main:8526 ] - [ INFO ]  开始获取定位信息：By.xpath: //*[@class='src-pages-usersetting-index_infooperate']
+2020-01-08 14:06:40 com.qingxiao.business.LogingPro [ main:0 ] - [ INFO ]  开始执行登录操作！
+2020-01-08 14:29:48 com.qingxiao.business.LogingPro [ main:0 ] - [ INFO ]  开始执行登录操作！
+2020-01-08 14:41:11 com.qingxiao.business.LogingPro [ main:0 ] - [ INFO ]  开始执行登录操作！
+2020-01-08 14:41:20 com.qingxiao.handle.SchoolListPageHandle [ main:8704 ] - [ ERROR ]  
+2020-01-08 14:51:19 com.qingxiao.business.LogingPro [ main:0 ] - [ INFO ]  开始执行登录操作！
+2020-01-08 14:52:16 com.qingxiao.business.LogingPro [ main:0 ] - [ INFO ]  开始执行登录操作！
+2020-01-08 15:51:27 com.qingxiao.business.LogingPro [ main:0 ] - [ INFO ]  开始执行登录操作！
+2020-01-08 15:57:18 com.qingxiao.business.LogingPro [ main:0 ] - [ INFO ]  开始执行登录操作！
+2020-01-08 16:41:17 com.qingxiao.business.LogingPro [ main:0 ] - [ INFO ]  开始执行登录操作！

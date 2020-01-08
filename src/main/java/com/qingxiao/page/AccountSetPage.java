@@ -76,4 +76,17 @@ public class AccountSetPage extends BasePage {
         return driver.findElement(GetLocator.getLocator("editPasswd"));
     }
 
+    public WebElement getNicknameElement(){
+        /**
+         * 昵称元素,,,索引为0
+         */
+        WebElement element = null;
+        try {
+            element = driver.findElements(GetLocator.getLocator("assertNickname")).get(0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return element;
+    }
+
 }
