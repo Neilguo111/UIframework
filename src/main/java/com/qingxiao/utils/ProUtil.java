@@ -38,6 +38,11 @@ public class ProUtil {
         Properties properties = new Properties();
         InputStream in = ProUtil.class.getClassLoader().getResourceAsStream(this.fileName);
         try {
+            InputStreamReader in1 =  new InputStreamReader(ProUtil.class.getClassLoader().getResourceAsStream(this.fileName),"UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        try {
             properties.load(in);
         } catch (IOException e) {
             e.printStackTrace();

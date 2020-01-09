@@ -10,7 +10,7 @@ public class StudentsListPageHandle {
      */
 
     public DriverBase driver;
-    public StudentsListPage studentsListPage;
+    private StudentsListPage studentsListPage;
     public StudentsListPageHandle(DriverBase driverBase){
         this.driver = driverBase;
         studentsListPage = new StudentsListPage(driver);

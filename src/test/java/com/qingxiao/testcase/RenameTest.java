@@ -15,12 +15,12 @@ import org.testng.annotations.Test;
 import static com.qingxiao.utils.Utils.getText;
 
 public class RenameTest extends CaseBase {
-    public DriverBase driverBase;
-    public SchoolListPro schoolListPro;
-    public AccountSetPro accountSetPro;
-    public ProUtil proUtil;
-    public HandleCookie handleCookie;
-    public LogingPro logingPro;
+    private DriverBase driverBase;
+    private SchoolListPro schoolListPro;
+    private AccountSetPro accountSetPro;
+    private ProUtil proUtil;
+    private HandleCookie handleCookie;
+    private LogingPro logingPro;
 
     @BeforeClass
     public void beforeTest(){

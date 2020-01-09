@@ -4,8 +4,8 @@ import com.qingxiao.base.DriverBase;
 import com.qingxiao.page.AccountSetPage;
 
 public class AccountSetPageHandle {
-    public DriverBase driverBase;
-    public AccountSetPage accountSetPage;
+    private DriverBase driverBase;
+    private AccountSetPage accountSetPage;
     public AccountSetPageHandle(DriverBase driverBase){
         this.driverBase = driverBase;
         this.accountSetPage = new AccountSetPage(driverBase);

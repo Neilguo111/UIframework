@@ -11,7 +11,7 @@ import java.util.List;
 public class SchoolListPageHandle {
     static Logger logger = Logger.getLogger(SchoolListPageHandle.class);
     public DriverBase driver;
-    public SchoolListPage slp;
+    private SchoolListPage slp;
     public SchoolListPageHandle(DriverBase driver){
         this.driver = driver;
         slp = new SchoolListPage(driver);

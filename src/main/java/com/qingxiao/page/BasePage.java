@@ -125,6 +125,20 @@ public class BasePage {
     }
 
     /**
+     * 判断元素是否存在，避免因为NoSuchElementException导致程序中断
+     * @param by
+     * @return boolean
+     */
+    public boolean isDisplay(By by){
+        try{
+            driver.findElement(by);
+        }catch (Exception e){
+            return false;
+        }
+        return true;
+    }
+
+    /**
      * 获取文本信息
      */
     public String getText(WebElement element){

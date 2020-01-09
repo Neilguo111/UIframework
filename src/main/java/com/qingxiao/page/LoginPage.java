@@ -15,7 +15,7 @@ public class LoginPage extends BasePage {
 
     /**
      * 获取轻校账号登录元素
-     * @return
+     * @return WebElement
      * @throws Exception
      */
     public WebElement getUserElement() throws Exception {
@@ -24,7 +24,7 @@ public class LoginPage extends BasePage {
 
     /**
      * 获取密码输入框元素
-     * @return
+     * @return WebElement
      * @throws Exception
      */
     public WebElement getPasswd() throws Exception {

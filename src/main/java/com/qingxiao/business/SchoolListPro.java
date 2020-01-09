@@ -8,8 +8,8 @@ import com.qingxiao.handle.SchoolListPageHandle;
  * 校区列表业务层
  */
 public class SchoolListPro {
-    public DriverBase driverBase;
-    public SchoolListPageHandle schoolListPageHandle;
+    private DriverBase driverBase;
+    private SchoolListPageHandle schoolListPageHandle;
     public SchoolListPro(DriverBase driverBase){
         this.driverBase = driverBase;
         schoolListPageHandle = new SchoolListPageHandle(driverBase);
@@ -35,5 +35,16 @@ public class SchoolListPro {
      */
     public void clickAllSchool(){
         schoolListPageHandle.iterSchool();
+    }
+
+    /**
+     * 点击指定校区
+     */
+    public void enterSchool(int index){
+        try {
+            schoolListPageHandle.clickScool(index);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
