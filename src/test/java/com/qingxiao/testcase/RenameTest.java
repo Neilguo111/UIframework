@@ -1,5 +1,6 @@
 package com.qingxiao.testcase;
 
+import com.qingxiao.TestngListenerScreenShot;
 import com.qingxiao.base.DriverBase;
 import com.qingxiao.business.AccountSetPro;
 import com.qingxiao.business.LogingPro;
@@ -10,10 +11,13 @@ import com.qingxiao.utils.ProUtil;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import static com.qingxiao.utils.Utils.getText;
 
+
+@Listeners({TestngListenerScreenShot.class})
 public class RenameTest extends CaseBase {
     private DriverBase driverBase;
     private SchoolListPro schoolListPro;
@@ -28,11 +32,8 @@ public class RenameTest extends CaseBase {
         schoolListPro = new SchoolListPro(driverBase);
         accountSetPro = new AccountSetPro(driverBase);
         proUtil = new ProUtil("cookie.properties");
-//        handleCookie = new HandleCookie(driverBase);
         logingPro = new LogingPro(driverBase);
         driverBase.loadUrl("https://biz.qingxiao.online");
-//        handleCookie.setCookie();
-//        driverBase.loadUrl("https://biz.qingxiao.online/#/erp/usersetting");
     }
 
 

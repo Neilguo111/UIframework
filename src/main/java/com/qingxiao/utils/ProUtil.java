@@ -1,6 +1,7 @@
 package com.qingxiao.utils;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
 /**
@@ -9,9 +10,11 @@ import java.util.Properties;
 public class ProUtil {
     private Properties pro;
     private String fileName;
+    private String filePath;
 
     public ProUtil(String fileName){
         this.fileName = fileName;
+        this.filePath = "E:\\code project\\java\\UIframework\\src\\main\\resources\\element.properties";
         this.pro = readProperties();
     }
 
@@ -37,11 +40,12 @@ public class ProUtil {
     private Properties readProperties(){
         Properties properties = new Properties();
         InputStream in = ProUtil.class.getClassLoader().getResourceAsStream(this.fileName);
-        try {
-            InputStreamReader in1 =  new InputStreamReader(ProUtil.class.getClassLoader().getResourceAsStream(this.fileName),"UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+//        InputStreamReader in1 = null;
+//        try {
+//            in1 = new InputStreamReader(ProUtil.class.getClassLoader().getResourceAsStream(this.fileName), "UTF-8");
+//        } catch (UnsupportedEncodingException e) {
+//            e.printStackTrace();
+//        }
         try {
             properties.load(in);
         } catch (IOException e) {
@@ -68,7 +72,7 @@ public class ProUtil {
 
     public static void main(String[] args) throws Exception {
         ProUtil util = new ProUtil("element.properties");
-        System.out.println(util.getPro("username"));
+        System.out.println(util.getPro("newHomeworkSubjectBtn"));
     }
 
 }

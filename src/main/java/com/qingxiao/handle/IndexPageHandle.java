@@ -121,7 +121,7 @@ public class IndexPageHandle {
      * 输入作业打卡标题
      * @param title 标题
      */
-    public void inpitHomeworkSubjectTitle(String title){
+    public void inputHomeworkSubjectTitle(String title){
         indexPage.input(indexPage.getHomeworkTitleInputElement(),title);
     }
 
@@ -138,5 +138,26 @@ public class IndexPageHandle {
      */
     public void clickClassSelectBtn(){
         indexPage.click(indexPage.getClassSelectElement());
+    }
+
+    /**
+     * 点击选定班级
+     */
+    public void clickClassConfirmBtn(){
+        indexPage.click(indexPage.getClassElement());
+    }
+
+    /**
+     * 点击提交主题按钮
+     */
+    public void clickSubmitHomewrkSubjectBtn(){
+        indexPage.click(indexPage.getSubmitHomeworkSubjectBtnElement());
+    }
+
+    /**
+     * 点击提交日历打卡主题按钮
+     */
+    public void clickSubmitCalenderSubejctBtn(){
+        indexPage.click(indexPage.getSubmitCalenderSubjectBtnElement());
     }
 }

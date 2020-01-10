@@ -55,6 +55,48 @@ public class IndexPage extends BasePage {
     }
 
     /**
+     * 获取选定班级元素
+     * @return WebElement
+     */
+    public WebElement getClassElement(){
+        WebElement element = null;
+        try {
+            element = driver.findElement(GetLocator.getLocator("classConfirmBtn"));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return element;
+    }
+
+    /**
+     * 获取发布作业打卡主题按钮
+     * @return WebElement
+     */
+    public WebElement getSubmitHomeworkSubjectBtnElement(){
+        WebElement element = null;
+        try {
+            element = driver.findElements(GetLocator.getLocator("submitSubjectBtn")).get(0);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return element;
+    }
+
+    /**
+     * 获取发布日历打卡主题按钮
+     * @return WebElement
+     */
+    public WebElement getSubmitCalenderSubjectBtnElement(){
+        WebElement element = null;
+        try {
+            element = driver.findElements(GetLocator.getLocator("submitSubjectBtn")).get(1);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return element;
+    }
+
+    /**
      * 获取新建日历打卡标题输入框
      * @return WebElement
      */
