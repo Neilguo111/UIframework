@@ -1,23 +1,21 @@
 package com.qingxiao.testcase;
 
-import com.qingxiao.TestngListenerScreenShot;
 import com.qingxiao.base.DriverBase;
 import com.qingxiao.business.IndexPagePro;
 import com.qingxiao.business.LogingPro;
 import com.qingxiao.business.SchoolListPro;
 import com.qingxiao.testCase.CaseBase;
-import com.qingxiao.utils.ProUtil;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Listeners({TestngListenerScreenShot.class})
-public class CreateSubjectTest extends CaseBase {
+/**
+ * 新学员报名
+ */
+public class StudentApply extends CaseBase  {
     private DriverBase driver;
     private LogingPro lp;
     private IndexPagePro ipp;
-    private ProUtil proUtil;
     private SchoolListPro slp;
 
     @BeforeTest
@@ -44,13 +42,12 @@ public class CreateSubjectTest extends CaseBase {
     }
 
     @Test(dependsOnMethods = {"getSchool"})
-    public void createHomeworkSubject(){
-        ipp.createHomeworkSubject("自动化新建作业打卡");
-    }
-
-    @Test(dependsOnMethods = {"getSchool"})
-    public void createCalenderSubject(){
-        ipp.createCalenderSubject("自动化新建日历打卡");
+    public void studentApply(){
+        try {
+            ipp.newStudentApply("测试学员","13100000000");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @AfterTest

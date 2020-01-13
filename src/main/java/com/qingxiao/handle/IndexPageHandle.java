@@ -129,7 +129,7 @@ public class IndexPageHandle {
      * 输入日历打卡主题标题
      * @param title 标题
      */
-    public void inputCalenderSubjectTile(String title){
+    public void inputCalenderSubjectTile(String title) throws Exception {
         indexPage.input(indexPage.getCalenderTitleInputElement(),title);
     }
 
@@ -141,7 +141,7 @@ public class IndexPageHandle {
     }
 
     /**
-     * 点击选定班级
+     * 新建打卡 点击选定班级
      */
     public void clickClassConfirmBtn(){
         indexPage.click(indexPage.getClassElement());
@@ -157,7 +157,97 @@ public class IndexPageHandle {
     /**
      * 点击提交日历打卡主题按钮
      */
-    public void clickSubmitCalenderSubejctBtn(){
+    public void clickSubmitCalenderSubjectBtn(){
         indexPage.click(indexPage.getSubmitCalenderSubjectBtnElement());
+    }
+
+    /**
+     * 输入学员报名姓名
+     * @param name 学员姓名
+     */
+    public void typeStudentApplyName(String name){
+        indexPage.input(indexPage.getStudentApplyNameInputElement(),name);
+    }
+
+    /**
+     *  点击选择学员姓名按钮
+     */
+    public void clickStudentSexBtn(){
+        indexPage.click(indexPage.getStudentApplySexSelectBtnElement());
+    }
+
+    /**
+     * 点击输入学员报名电话
+     * @param mobile 学员联系方式
+     */
+    public void typeStudentMobile(String mobile){
+        indexPage.input(indexPage.getStudentApplyMobileInputElement(),mobile);
+    }
+
+    /**
+     * 点击新增学员确定按钮
+     */
+    public void clickStudentApplyConfirmBtn(){
+        indexPage.click(indexPage.getStudentApplyConfirmBtnElement());
+    }
+
+    /**
+     * 新建班级点击班级课程下拉框按钮
+     */
+    public void clickNewClassCourseNameBtn(){
+        indexPage.click(indexPage.getNewClassCourseNameBtnElement());
+    }
+
+    /**
+     * 点击选择新建班级所属课程
+     */
+    public void clickNewClassCourses(){
+        indexPage.click(indexPage.getNewClassCoursesElement());
+    }
+
+    /**
+     * 新建班级输入班级名称
+     * @param className 班级名称
+     */
+    public void typeNewClassName(String className){
+        indexPage.input(indexPage.getNewClassNameInputElement(),className);
+    }
+
+    /**
+     * 输入班级容量
+     * @param classCapacity 班级容量大小
+     */
+    public void typeClassCapacity(String classCapacity){
+        indexPage.input(indexPage.getNewClassSizeInputElement(),classCapacity);
+    }
+
+    /**
+     * 新建班级输入课时消耗
+     * @param expend 课时消耗
+     */
+    public void typeClassCourseExpend(String expend){
+        indexPage.input(indexPage.getNewClassCourseConsumerInputElement(),expend);
+    }
+
+    /**
+     * 新建班级 点击确认新建班级确认按钮
+     */
+    public void clickNewClassConfirmBtn(){
+        indexPage.click(indexPage.getNewClassConfirmBtnElement());
+    }
+
+    /**
+     * 输入课程名称
+     * @param courseName 课程名称
+     */
+    public void typeNewCourseName(String courseName){
+        indexPage.input(indexPage.getNewCourseNameInputElement(),courseName);
+    }
+
+    /**
+     * 点击新建课程确认按钮
+     */
+    public void clickNewCourseConfirmBtn(){
+        indexPage.click(indexPage.getNewCourseConfirmBtnElement());
     }
 }

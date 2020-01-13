@@ -61,11 +61,72 @@ public class IndexPagePro {
      * 新建日历打卡
      * @param title 日历打卡主题标题
      */
-    public void createCalenderSubject(String title){
+    public void createCalenderSubject(String title) throws Exception {
+        Thread.sleep(1000);
         iph.clickNewCalenderSubjectBtn();
+        Thread.sleep(1000);
         iph.inputCalenderSubjectTile(title);
+        Thread.sleep(1000);
         iph.clickClassSelectBtn();
+        Thread.sleep(1000);
         iph.clickClassConfirmBtn();
-        iph.clickSubmitCalenderSubejctBtn();
+        Thread.sleep(1000);
+        iph.clickSubmitCalenderSubjectBtn();
+        Thread.sleep(2000);
+    }
+
+    /**
+     * 新学员报名
+     */
+    public void newStudentApply(String name,String mobile) throws InterruptedException {
+        Thread.sleep(1000);
+        iph.clickNewStudentApply();
+        Thread.sleep(1000);
+        iph.typeStudentApplyName(name);
+        Thread.sleep(1000);
+        iph.clickStudentSexBtn();
+        Thread.sleep(1000);
+        iph.typeStudentMobile(mobile);
+        Thread.sleep(1000);
+        iph.clickStudentApplyConfirmBtn();
+        Thread.sleep(2000);
+    }
+
+    /**
+     * 新建班级
+     * @param className 班级名称
+     * @param classCapacity 班级容量
+     * @param expend 班级课时消耗
+     */
+    public void newClass(String className,String classCapacity,String expend) throws InterruptedException {
+        Thread.sleep(1000);
+        iph.clickNewClassBtn();
+        Thread.sleep(1000);
+        iph.clickNewClassCourseNameBtn();
+        Thread.sleep(1000);
+        iph.clickNewClassCourses();
+        Thread.sleep(1000);
+        iph.typeNewClassName(className);
+        Thread.sleep(1000);
+        iph.typeClassCapacity(classCapacity);
+        Thread.sleep(1000);
+        iph.typeClassCourseExpend(expend);
+        Thread.sleep(1000);
+        iph.clickNewClassConfirmBtn();
+        Thread.sleep(2000);
+    }
+
+    /**
+     * 新建课程
+     * @param courseName 课程名称
+     */
+    public void newCourse(String courseName) throws InterruptedException {
+        Thread.sleep(1000);
+        iph.clickNewCourseBtn();
+        Thread.sleep(1000);
+        iph.typeNewCourseName(courseName);
+        Thread.sleep(1000);
+        iph.clickNewCourseConfirmBtn();
+        Thread.sleep(2000);
     }
 }
