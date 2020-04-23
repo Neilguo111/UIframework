@@ -3,6 +3,7 @@ package com.qingxiao.testCase;
 import com.qingxiao.base.DriverBase;
 import com.qingxiao.business.LogingPro;
 
+
 public class Login extends CaseBase {
     public DriverBase driver;
     public LogingPro logingPro;
@@ -15,7 +16,6 @@ public class Login extends CaseBase {
      * 访问url
      * @throws InterruptedException
      */
-
     public void getLoginHome() throws InterruptedException {
         driver.loadUrl("https://biz.qingxiao.online");
         Thread.sleep(5000);

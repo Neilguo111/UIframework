@@ -7,7 +7,7 @@ import com.qingxiao.utils.GetLocator;
 public class LogingPageHandle {
     public DriverBase driver;
     //设置全局变量
-    public LoginPage lp;
+    private LoginPage lp;
 
     public LogingPageHandle(DriverBase driver){
         this.driver = driver;

@@ -4,8 +4,8 @@ import com.qingxiao.base.DriverBase;
 import com.qingxiao.page.AccountSetPage;
 
 public class AccountSetPageHandle {
-    public DriverBase driverBase;
-    public AccountSetPage accountSetPage;
+    private DriverBase driverBase;
+    private AccountSetPage accountSetPage;
     public AccountSetPageHandle(DriverBase driverBase){
         this.driverBase = driverBase;
         this.accountSetPage = new AccountSetPage(driverBase);
@@ -15,7 +15,7 @@ public class AccountSetPageHandle {
      * 返回学校列表页面
      */
     public void clickReturnBtn(){
-        accountSetPage.click(accountSetPage.getReturnBtnElement());
+        accountSetPage.click(accountSetPage.getReturnBtn());
     }
 
     /**
@@ -30,8 +30,8 @@ public class AccountSetPageHandle {
      * @return
      * @throws Exception
      */
-    public String getNickname() throws Exception {
-        return accountSetPage.getText(accountSetPage.getNicknameInputElement());
+    public String getNicknameText() throws Exception {
+        return accountSetPage.getText(accountSetPage.getNicknameElement());
     }
 
     /**
@@ -40,7 +40,7 @@ public class AccountSetPageHandle {
      * @throws Exception
      */
     public void inputNewNicknam(String nickname) throws Exception {
-        accountSetPage.input(accountSetPage.getNicknameInputElement(),nickname);
+        accountSetPage.clearInput(accountSetPage.getNicknameInputElement(),nickname);
     }
 
     /**

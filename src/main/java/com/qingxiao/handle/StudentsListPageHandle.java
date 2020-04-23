@@ -10,7 +10,7 @@ public class StudentsListPageHandle {
      */
 
     public DriverBase driver;
-    public StudentsListPage studentsListPage;
+    private StudentsListPage studentsListPage;
     public StudentsListPageHandle(DriverBase driverBase){
         this.driver = driverBase;
         studentsListPage = new StudentsListPage(driver);
@@ -70,5 +70,33 @@ public class StudentsListPageHandle {
          * 点击搜索学员分班状态元素
          */
         studentsListPage.click(studentsListPage.getSearchJoinClassStaus());
+    }
+
+    public void clickSearchBtn(){
+        /**
+         * 点击搜索学员按钮
+         */
+        studentsListPage.click(studentsListPage.getSearchBtn());
+    }
+
+    public void clickResetBtn(){
+        /**
+         * 点击重置搜索条件按钮
+         */
+        studentsListPage.click(studentsListPage.getSearchResetBtn());
+    }
+
+    public void clickHistoryStudentList(){
+        /**
+         * 点击获取历史在读学员按钮
+         */
+        studentsListPage.click(studentsListPage.getHistoryStudentListBtn());
+    }
+
+    public void clickOnClassStudentList(){
+        /**
+         * 点击获取在读学员列表按钮
+         */
+        studentsListPage.click(studentsListPage.getOnClassStudentListBtn());
     }
 }

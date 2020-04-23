@@ -5,7 +5,9 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class BasePage {
     public DriverBase driver;
@@ -20,12 +22,24 @@ public class BasePage {
      * @return
      */
     public WebElement findElement(By by){
-        WebElement element = driver.findElement(by);
+        WebElement element = null;
+        try {
+            element = driver.findElement(by);
+            logger.info("开始获取元素" + by.toString());
+        }catch (NoSuchElementException e){
+            logger.error("找不到元素" + e.getMessage());
+        }
         return element;
     }
 
+    /**
+     * 查找元素列表
+     * @param by
+     * @return
+     */
     public List<WebElement> findElements(By by){
-        return driver.findElements(by);
+        List<WebElement> elements = driver.findElements(by);
+        return elements;
     }
 
     /**
@@ -37,6 +51,13 @@ public class BasePage {
     }
 
     /**
+     * 刷新页面
+     */
+    public void refresh(){
+        driver.refresh();
+    }
+
+    /**
      * 封装点击事件
      * @param element
      */
@@ -44,7 +65,7 @@ public class BasePage {
         if (element != null){
             element.click();
         }else {
-            System.out.println("元素没有定位到，点击失败！");
+            logger.error("元素没有定位到，点击失败！");
         }
     }
 
@@ -57,8 +78,26 @@ public class BasePage {
         if (element != null){
             element.sendKeys(value);
         }else {
-            System.out.println("元素没有定位到，输入失败！");
+            logger.error("元素没有定位到，输入失败！");
         }
+    }
+
+    /**
+     * 删除现有内容后输入
+     * @param element
+     * @param value
+     */
+    public void clearInput(WebElement element,String value){
+        if (element != null){
+            element.clear();
+            element.sendKeys(value);
+        }else {
+            logger.error("元素没有定位到，输入失败！");
+        }
+    }
+
+    public String getElementText(WebElement element){
+        return element.getText();
     }
 
     /**
@@ -66,6 +105,14 @@ public class BasePage {
      */
     public void back(){
         driver.back();
+    }
+
+    /**
+     * 获取当前页面title
+     * @return String
+     */
+    public String windowTitle(){
+        return driver.currentWindowTitle();
     }
 
     /**
@@ -78,10 +125,27 @@ public class BasePage {
     }
 
     /**
+     * 判断元素是否存在，避免因为NoSuchElementException导致程序中断
+     * @param by
+     * @return boolean
+     */
+    public boolean isDisplay(By by){
+        try{
+            driver.findElement(by);
+        }catch (Exception e){
+            return false;
+        }
+        return true;
+    }
+
+    /**
      * 获取文本信息
      */
     public String getText(WebElement element){
         return element.getText();
+    }
+
+    public void executeJs(String jsCode){
     }
 
 }
