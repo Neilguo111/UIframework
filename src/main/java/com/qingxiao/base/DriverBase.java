@@ -2,7 +2,6 @@ package com.qingxiao.base;
 
 import com.sun.org.apache.regexp.internal.RE;
 import com.sun.org.apache.xpath.internal.operations.Bool;
-import jdk.nashorn.internal.runtime.logging.DebugLogger;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;

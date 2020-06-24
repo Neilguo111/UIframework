@@ -89,8 +89,55 @@ public class FileHanlder {
         }
     }
 
+    /**
+     * 提取文件
+     * @param File
+     * @param destFile
+     */
+    public static void readFileToTxt(String File,String destFile){
+        try {
+            BufferedReader br =new BufferedReader(new FileReader(new File(File)));
+            BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(destFile)));
+            String line = "";
+            while ((line = br.readLine())!= null){
+                if (line.contains("title:" )|| line.contains("category:")){
+                    bufferedWriter.write(line);
+                    bufferedWriter.write("\t");
+                }else if (line.contains("type")){
+                    bufferedWriter.write(line);
+                    bufferedWriter.write("\n");
+                }
+            }
+            bufferedWriter.close();
+            br.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static int [] MergeList(int a[],int b[]){
+
+        int[] result = new int[a.length + b.length];
+        int i = 0,j = 0,k = 0;
+        while (i < a.length && j < b.length){
+            if (a[i] <= b[j]){
+                result[k++] = a[i++];
+            }else {
+                result[k++] = a[j++];
+            }
+        }
+        while (i < a.length){
+            result[k++] = a[i++];
+        }
+        while (j < b.length){
+            result[k++] = a[j++];
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
-        ExcelToTextFile(System.getProperty("user.dir") + File.separator + "test001.xls",
-                System.getProperty("user.dir") + File.separator + "test.txt");
+
     }
 }
